@@ -19,7 +19,7 @@ env/
 models/*.caffemodel
 
 # Generated output images
-samples/restored_photo.png
+# samples/restored_photo.png  # Kept for demo purposes
 
 # OS artifacts
 .DS_Store
