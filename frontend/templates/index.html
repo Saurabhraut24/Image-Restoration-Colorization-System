@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Restoration | Restore Memories</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animate"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-magic"></i>
+                <h1>AI Photo <span>Restorer</span></h1>
+            </div>
+            <p class="subtitle">Breathe life into your old black & white memories using Deep Learning</p>
+        </header>
+
+        <main>
+            <div class="upload-section glass">
+                <div class="drop-zone" id="drop-zone">
+                    <div class="drop-zone-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>Drag & Drop Photo</h3>
+                        <p>or click to browse (JPG, PNG)</p>
+                    </div>
+                    <input type="file" id="file-input" hidden accept="image/*">
+                </div>
+
+                <div class="options">
+                    <div class="option">
+                        <label class="switch">
+                            <input type="checkbox" id="restore-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <span>Modern Restoration (Denoise & Sharpen)</span>
+                    </div>
+                    <div class="option">
+                        <label class="switch">
+                            <input type="checkbox" id="color-toggle" checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <span>AI Colorization</span>
+                    </div>
+                </div>
+
+                <button id="process-btn" class="btn-primary" disabled>
+                    <i class="fas fa-wand-sparkles"></i> Restore Memory
+                </button>
+            </div>
+
+            <div class="result-section" id="result-section" style="display: none;">
+                <div class="comparison-container">
+                    <div class="image-box glass">
+                        <h4>Original</h4>
+                        <img id="original-preview" src="" alt="Original">
+                    </div>
+                    <div class="arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="image-box glass result-box">
+                        <h4>Restored</h4>
+                        <div id="loader" class="loader-container" style="display: none;">
+                            <div class="loader"></div>
+                            <p>AI is processing...</p>
+                        </div>
+                        <img id="result-image" src="" alt="Result" style="display: none;">
+                        <a id="download-btn" class="btn-secondary" style="display: none;">
+                            <i class="fas fa-download"></i> Download Result
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by OpenCV & Deep Learning • Made with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

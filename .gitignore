@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment variables
+.env
+
+# Large model weight only (123 MB — auto-downloaded at runtime)
+models/*.caffemodel
+
+# Generated output images
+samples/restored_photo.png
+
+# OS artifacts
+.DS_Store
+Thumbs.db
