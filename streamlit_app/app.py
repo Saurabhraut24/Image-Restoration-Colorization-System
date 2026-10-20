@@ -83,7 +83,10 @@ uploaded_file = st.file_uploader("Choose an old photo...", type=["jpg", "jpeg", 
 
 if uploaded_file is not None:
     # Load and display original image
-    image    = Image.open(uploaded_file).convert("RGB")
+    image = Image.open(uploaded_file).convert("RGB")
+    max_dim = 1200
+    if max(image.size) > max_dim:
+        image.thumbnail((max_dim, max_dim), Image.Resampling.LANCZOS)
     image_np = np.array(image)
 
     col1, col2 = st.columns(2)

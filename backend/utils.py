@@ -44,7 +44,10 @@ def load_colorizer():
     setup_models()
 
     # Load the model
-    net = cv2.dnn.readNetFromCaffe(PROTOTXT, MODEL)
+    try:
+        net = cv2.dnn.readNetFromCaffe(PROTOTXT, MODEL)
+    except AttributeError:
+        net = cv2.dnn.readNet(PROTOTXT, MODEL)
 
     # Load the cluster centers
     pts = np.load(POINTS)

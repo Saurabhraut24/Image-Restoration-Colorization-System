@@ -41,7 +41,9 @@ def process_image():
     color_mode   = request.form.get("color",   "true") == "true"
 
     # Read image
-    img      = Image.open(file.stream).convert("RGB")
+    img = Image.open(file.stream).convert("RGB")
+    if max(img.size) > 1000:
+        img.thumbnail((1000, 1000), Image.Resampling.LANCZOS)
     image_np = np.array(img)
 
     processed_image = image_np

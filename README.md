@@ -1,3 +1,14 @@
+---
+title: Image Restoration & Colorization System
+emoji: 🎨
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+app_file: app.py
+pinned: false
+license: mit
+---
+
 # 🎨 AI Image Restoration & Colorization System
 
 Restore your old black and white memories into high-quality, modern colored images using Deep Learning.
